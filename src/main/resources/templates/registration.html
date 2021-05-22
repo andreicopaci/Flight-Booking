@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>User Registration</title>
+
+</head>
+<body>
+<div align="center">
+    <h1>User Registration</h1>
+	<form method="post" th:action="@{/user_info}" th:object="${userInfo}"><br/>
+        <input id="firstName" placeholder="First name" required type="text" th:field="*{firstName}"/><br/>
+        <input id="lastName" placeholder="Last name" required type="text" th:field="*{lastName}"/><br/>
+        <input id="email" placeholder="Email" required type="text" th:field="*{email}"/><br/>
+        <input id="password" placeholder="Password" required type="password" th:field="*{password}"/><br/>
+        <select th:field="*{gender}"><br/>
+            <option value="" hidden>Select gender</option><br/>
+            <option th:value="'Female'" th:text="Female"></option>
+            <option th:value="'Male'" th:text="Male"></option>
+        </select><br/>
+        <input id="address" placeholder="Address" required type="text" th:field="*{address}"/><br/>
+        <input id="country" placeholder="Country" required type="text" th:field="*{country}"/><br/>
+        <input id="birthday" placeholder="Birthday (dd-mm-yyy)" required type="date" th:field="*{birthday}"/><br/>
+        <input id="telephone" placeholder="Telephone" required type="text" th:field="*{telephone}"/><br/>
+        <br/>
+    <input type="submit" value="Create User">
+	</form>
+	</div>
+</body>
+</html>

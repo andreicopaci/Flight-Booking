@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Registration Success</title>
+<style type="text/css">
+    span {
+        display: inline-block;
+        width: 200px;
+        text-align: left;
+    }
+</style>
+</head>
+<body>
+<div align="center">
+    <h2>Flight Booking Completed!</h2>
+    <span>From:</span><span th:text="${flight.airportDep}"></span><br/>
+    <span>To:</span><span th:text="${flight.airportArr}"></span><br/>
+    <span>Depart:</span><span th:text="${flight.dateDep}"></span><br/>
+    <span>Return:</span><span th:text="${flight.dateArr}"></span><br/>
+    <span>Number of passengers:</span><span th:text="${flight.passengers}"></span><br/>
+    <span>Cabin Class:</span><span th:text="${flight.cabinClass}"></span><br/>
+    <span>Flight type:</span><span th:text="${flight.flightType}"></span><br/>
+</div>
+</body>
+</html>

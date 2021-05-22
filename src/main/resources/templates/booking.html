@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Flight Booking</title>
+   
+</head>
+<body>
+<div align="center">
+    <h1>Flight Booking</h1>
+	<form method="post" th:action="@{/flight_info}" th:object="${flightInfo}"><br/>
+        <input id="airportDep" placeholder="From" required type="text" th:field="*{airportDep}"/><br/>
+        <input id="airportArr" placeholder="To" required type="text" th:field="*{airportArr}"/><br/>
+        <input id="dateDep" placeholder="Depart (dd-mm-yyyy)" required type="text" th:field="*{dateDep}"/><br/>
+        <input id="dateArr" placeholder="Return (dd-mm-yyyy)" required type="text" th:field="*{dateArr}"/><br/>
+        <input id="passengers" placeholder="Number of passengers" required type="text" th:field="*{passengers}"/><br/>
+        <select th:field="*{cabinClass}"><br/>
+            <option value="" hidden>Select cabin class</option>
+            <option th:value="'Economy'" th:text="Economy"></option>
+            <option th:value="'Premium economy'" th:text="'Premium economy'"></option>
+            <option th:value="'Business class'" th:text="'Business class'"></option>
+            <option th:value="'First-class'" th:text="'First-class'"></option>
+        </select><br/>
+        <select th:field="*{flightType}"><br/>
+            <option value="" hidden>Select flight type</option>
+            <option th:value="'Roundtrip'" th:text="Roundtrip"></option>
+            <option th:value="'One way'" th:text="'One way'"></option>
+            <option th:value="'Multi-city'" th:text="'Multi-city'"></option>
+        </select><br/>
+        <br/>
+    <input type="submit" value="Book Flight"><br/>
+	</form>
+	</div>
+</body>
+</html>
